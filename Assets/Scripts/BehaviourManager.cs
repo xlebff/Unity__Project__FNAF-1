@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CAM { _1A, _1B, _1C, _5, _3, _2A, _2B, _6, _7, _4A, _4B, DOOR };
-
 public class BehaviourManager : MonoBehaviour, TimeListener
 {
     [SerializeField] private Enemies _enemy;
     [SerializeField] private float _delay = 3.02f;
     [SerializeField] private int _intelligence;
-    [SerializeField] private bool[] _isChangingOnHour = new bool[4] { false, false, false, false };
-    private Dictionary<CAM, CAM[]> _path;
     [SerializeField] private CAM _currentCam = CAM._1A;
-    
+    [SerializeField] private bool[] _isChangingOnHour = new bool[3] { false, false, false };
+
+    private Dictionary<CAM, CAM[]> _path;
+
+
     private void OnValidate()
     {
         _intelligence = Intelligence.GetIntelligence(_enemy);
@@ -36,6 +36,8 @@ public class BehaviourManager : MonoBehaviour, TimeListener
         }
     }
 
+    private void Start() => StartCoroutine(MovingChecker());
+
     private IEnumerator MovingChecker()
     {
         while (true) {
@@ -47,6 +49,7 @@ public class BehaviourManager : MonoBehaviour, TimeListener
 
     private void Moving()
     {
+        Debug.Log("Moving");
         _currentCam = _path[_currentCam][Random.Range(0, _path[_currentCam].Length)];
     }
 
@@ -73,4 +76,8 @@ public class BehaviourManager : MonoBehaviour, TimeListener
         if (_isChangingOnHour[index])
             ++_intelligence;
     }
+
+    public CAM GetCurrentCAM() => _currentCam;
+
+    public bool IsInCAM(CAM cam) => _currentCam == cam;
 }

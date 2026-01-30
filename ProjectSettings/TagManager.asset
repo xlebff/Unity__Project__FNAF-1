@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Freddy
+  - Bonnie
+  - Chica
   layers:
   - Default
   - TransparentFX

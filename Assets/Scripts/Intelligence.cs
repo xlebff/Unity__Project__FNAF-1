@@ -37,7 +37,7 @@ public class Intelligence : MonoBehaviour
         [CAM._1B] = new CAM[1] { CAM._7 },
         [CAM._7] = new CAM[1] { CAM._6 },
         [CAM._6] = new CAM[1] { CAM._4A },
-        [CAM._4A] = new CAM[1] { CAM._4B }
+        [CAM._4A] = new CAM[1] { CAM.DOOR }
     };
 
     public static Dictionary<CAM, CAM[]> GetPath(Enemies enemy)

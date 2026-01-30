@@ -28,11 +28,14 @@ public class Timer : MonoBehaviour
 
         if (_time >= _secPerHour)
         {
-            _timer.text = (++_hour) + " AM";
+            _timer.text = (++_hour) + " PM";
             _time = 0;
 
-            foreach (TimeListener listener in _listeners)
-                listener.OnHourChanged(_hour);
+            if (_listeners.Length > 0)
+            {
+                foreach (TimeListener listener in _listeners)
+                    listener.OnHourChanged(_hour);
+            }
         }
 
         if (_hour >= 6)
