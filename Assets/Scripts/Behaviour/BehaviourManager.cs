@@ -13,7 +13,7 @@ public class BehaviourManager : MonoBehaviour, TimeListener
     private Dictionary<CAM, CAM[]> _path;
 
 
-    private void OnValidate()
+    private void OnEnable()
     {
         _intelligence = Intelligence.GetIntelligence(_enemy);
         _path = Intelligence.GetPath(_enemy);
@@ -49,7 +49,10 @@ public class BehaviourManager : MonoBehaviour, TimeListener
 
     private void Moving()
     {
+        if (_enemy == Enemies.Freddy && !Freddy1AChecker.Checked())
+            return;
         Debug.Log("Moving");
+        CamerasManager.CamUpdate(_currentCam);
         _currentCam = _path[_currentCam][Random.Range(0, _path[_currentCam].Length)];
     }
 

@@ -15,18 +15,36 @@ public class OnEnableChecker : MonoBehaviour
     [SerializeField] private GameObject _freddyBonnieSprite;
     [SerializeField] private GameObject _noneSprite;
 
-    private BehaviourManager _freddy;
-    private BehaviourManager _bonnie;
-    private BehaviourManager _chica;
+    [SerializeField] private BehaviourManager _freddy;
+    [SerializeField] private BehaviourManager _bonnie;
+    [SerializeField] private BehaviourManager _chica;
 
-    private void OnValidate()
-    {
-        _freddy = GameObject.FindGameObjectWithTag("Freddy").GetComponent<BehaviourManager>();
-        _bonnie = GameObject.FindGameObjectWithTag("Bonnie").GetComponent<BehaviourManager>();
-        _chica = GameObject.FindGameObjectWithTag("Chica").GetComponent<BehaviourManager>();
-    }
+    public bool isEnable = true;
 
     private void OnEnable()
+    {
+        DisableAll();
+
+        if (!isEnable) return;
+
+        bool freddy = _freddy != null && _freddy.IsInCAM(_cam);
+        bool bonnie = _bonnie != null && _bonnie.IsInCAM(_cam);
+        bool chica = _chica != null && _chica.IsInCAM(_cam);
+
+        GameObject toEnable =
+            (freddy && bonnie && chica) ? _allSprite :
+            (freddy && bonnie) ? _freddyBonnieSprite :
+            (freddy && chica) ? _freddyChicaSprite :
+            (bonnie && chica) ? _bonnieChicaSprite :
+            (freddy) ? _freddySprite :
+            (bonnie) ? _bonnieSprite :
+            (chica) ? _chicaSprite :
+                                          _noneSprite;
+
+        if (toEnable) toEnable.SetActive(true);
+    }
+
+    private void DisableAll()
     {
         if (_allSprite) _allSprite.SetActive(false);
         if (_bonnieSprite) _bonnieSprite.SetActive(false);
@@ -36,18 +54,7 @@ public class OnEnableChecker : MonoBehaviour
         if (_freddyChicaSprite) _freddyChicaSprite.SetActive(false);
         if (_freddyBonnieSprite) _freddyBonnieSprite.SetActive(false);
         if (_noneSprite) _noneSprite.SetActive(false);
-
-        bool freddy = _freddy.IsInCAM(_cam);
-        bool bonnie = _bonnie.IsInCAM(_cam);
-        bool chica = _chica.IsInCAM(_cam);
-
-        if (freddy && bonnie && chica) _allSprite.SetActive(true);
-        else if (freddy && bonnie) _freddyBonnieSprite.SetActive(true);
-        else if (freddy && chica) _freddyChicaSprite.SetActive(true);
-        else if (freddy) _freddySprite.SetActive(true);
-        else if (bonnie && chica) _bonnieChicaSprite.SetActive(true);
-        else if (bonnie) _bonnieSprite.SetActive(true);
-        else if (chica) _chicaSprite.SetActive(true);
-        else _noneSprite.SetActive(true);
     }
+
+    public CAM GetCam() => _cam;
 }

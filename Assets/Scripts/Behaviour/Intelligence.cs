@@ -22,8 +22,8 @@ public class Intelligence : MonoBehaviour
     [SerializeField]
     private static Dictionary<CAM, CAM[]> _chicaPathes = new Dictionary<CAM, CAM[]>()
     {
-        [CAM._1A] = new CAM[1] { CAM._5 },
-        [CAM._5] = new CAM[2] { CAM._7, CAM._4A },
+        [CAM._1A] = new CAM[1] { CAM._1B },
+        [CAM._1B] = new CAM[2] { CAM._7, CAM._4A },
         [CAM._7] = new CAM[2] { CAM._6, CAM._4A },
         [CAM._4A] = new CAM[2] { CAM._1B, CAM._4B },
         [CAM._6] = new CAM[2] { CAM._7, CAM._4A },
