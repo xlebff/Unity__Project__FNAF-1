@@ -6,9 +6,19 @@ public class Timer : MonoBehaviour
     [SerializeField] private TMP_Text _timer;
     [SerializeField] private float _time = 0;
     [SerializeField] private int _secPerHour = 90; // 1 hour -> 90 sek
-    [SerializeField] private TimeListener[] _listeners;
+    [SerializeField] private GameObject[] _listenersObjects;
+
+    private ITimeListener[] _listeners;
 
     public static Timer Instance { get; private set; }
+
+    private void OnValidate()
+    {
+        _listeners = new ITimeListener[_listenersObjects.Length];
+
+        for (int i = 0; i < _listenersObjects.Length; i++)
+            _listeners[i] = _listenersObjects[i].GetComponent<ITimeListener>();
+    }
 
     private void Awake()
     {
@@ -33,7 +43,7 @@ public class Timer : MonoBehaviour
 
             if (_listeners.Length > 0)
             {
-                foreach (TimeListener listener in _listeners)
+                foreach (ITimeListener listener in _listeners)
                     listener.OnHourChanged(_hour);
             }
         }

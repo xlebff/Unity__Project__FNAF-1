@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LEFT_LIGHT_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4177408dc095bf4aacdca3db5a91512
+      internalID: 1495395319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEFT_LIGHT_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56e4304004a9ac44a55e3e5e782efd8
+      internalID: 988187356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LEFT_LIGHT_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a3635a98bd78b0478e449d83fc4bf56
+      internalID: 1803765125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LEFT_LIGHT_0: 1495395319
+      LEFT_LIGHT_1: 988187356
+      LEFT_LIGHT_2: 1803765125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

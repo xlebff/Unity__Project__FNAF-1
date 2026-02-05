@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    private void Start()
-    {
-        PlayerPrefs.SetInt("Night", 6);
-    }
+    public void Testing() => Debug.Log("test");
 }

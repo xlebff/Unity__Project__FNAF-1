@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 1-OFFICE_CHICA_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db62ec35ca2b5f04a8046fe15903a161
+      internalID: -506483478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-OFFICE_CHICA_1
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f9a6ad2a7143224ba1e35fb25f9aefb
+      internalID: 380698247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-OFFICE_CHICA_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 0
+        width: 533.3333
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43cbbeb184d73b947942c96bc9b9c1f7
+      internalID: -2120724365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      1-OFFICE_CHICA_0: -506483478
+      1-OFFICE_CHICA_1: 380698247
+      1-OFFICE_CHICA_2: -2120724365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
